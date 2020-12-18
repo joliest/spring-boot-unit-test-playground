@@ -8,7 +8,13 @@ public class Dollar {
         this.amount = amount;
     }
 
-    void times(int multiplier) {
-        amount *= multiplier;
+    Dollar times(int multiplier) {
+        return new Dollar(multiplier * amount);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Dollar dollar = (Dollar) o;
+        return dollar.amount == amount;
     }
 }
